@@ -1,10 +1,14 @@
-# Project: About Me Portfolio
+# Project Configuration (AGENTS.md) - Web About Me
+
+This file guides development inside the **`web-about-me`** repository.
+
+---
 
 ## 🏗️ Repository Overview
 * **Role**: Static Web Portfolio & Project Showcase
 * **Main Branch**: `dev` (where updates and integration occur)
-* **Tech Stack**: React 19 + Vite 6 + TypeScript + Tailwind CSS + shadcn/ui
-* **Testing**: Playwright
+* **Tech Stack**: React 19 + Vite 6 + TypeScript + Vanilla CSS
+* **Hosting**: GitHub Pages / Vercel (Static)
 * **Code Formatting**: ESLint + Prettier
 
 ---
@@ -15,35 +19,33 @@
    - `feature/<short-description>`
    - `fix/<short-description>`
    - `chore/<short-description>`
-3. **Conventional Commits**: Every commit message must follow the Conventional Commits specification:
-   - `feat: <description>` (new features)
-   - `fix: <description>` (bug fixes)
-   - `refactor: <description>` (code cleanup/restructuring)
-   - `test: <description>` (adding or modifying tests)
-   - `docs: <description>` (documentation changes)
-   - `chore: <description>` (tooling, dependencies, config updates)
+3. **Conventional Commits**: Every commit message must follow the Conventional Commits specification.
 4. **Atomic Commits**: Ensure commits are small, logical, and focus on one specific change.
-5. **Pre-commit Checks**: **ALWAYS** run `pnpm build` and test the code before making any git commits. Commits must never break the build.
+5. **Pre-commit Checks**: **ALWAYS** run build and test the code before making any git commits. Commits must never break the build.
 
 ---
 
 ## 📜 Development & Coding Rules
-1. **Styling**: Always use Tailwind CSS class names. Follow a consistent dark-theme color palette.
-2. **Components**: Use shadcn/ui components for interactive and layout elements (buttons, cards, menus, dialogs). Customize them in `components/ui/`.
-3. **Readability & Formatting**:
-   - ESLint and Prettier are mandatory. Run formatting/linting before committing.
-   - Use functional components with TypeScript typings (`React.FC` or standard functions).
+1. **Purely Static**: No user authentication, database connections, or changeable states are allowed in this project. Safe for static hosting.
+2. **Styling**: Use Vanilla CSS variables, flexbox, and grid layouts. Avoid TailwindCSS unless explicitly requested. Maintain a sleek, modern space-dark theme.
+3. **Responsive Design**: Ensure layouts stack beautifully on mobile viewports.
+4. **Icons**: Use `lucide-react` for standard vector iconography.
+5. **Readability & Formatting**:
+   - ESLint and Prettier are mandatory.
    - Use clean naming conventions (PascalCase for components, camelCase for variables/functions).
-4. **Testing**:
-   - Write Playwright tests for critical features (user biography view, navigation, project card links).
-   - Co-locate or organize tests in the `tests/` directory.
+
+---
+
+## 📂 Directories & Content
+* `src/assets/` - Images, developer photo, project graphics.
+* `src/components/` - Clean UI items (CV download button, project cards).
+* `src/pages/Portfolio.tsx` - Primary static layout detailing biography and sections describing projects (categorized into "Websites" and "Applications" subgenres) with links/instructions.
+* `src/index.css` - Vanilla CSS layout, space-dark rules, and keyframe animations.
+* `src/App.tsx` - Root frame.
 
 ---
 
 ## ⚙️ Standard Commands
-* **Package Manager**: `pnpm` (Use `pnpm add` instead of `npm install`)
-* **Dev Server**: `pnpm dev`
-* **Build App**: `pnpm build`
-* **Run Tests (Playwright)**: `pnpm dlx playwright test`
-* **Linting & Formatting**: `pnpm lint` & `pnpm format`
-* **Type Checking**: `pnpm tsc --noEmit`
+* **Dev Server**: `npm run dev` (or `pnpm dev`)
+* **Build App**: `npm run build` (or `pnpm build`)
+* **Linting**: `npm run lint` (or `pnpm lint`)
