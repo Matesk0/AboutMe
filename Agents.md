@@ -23,6 +23,7 @@
    - `docs: <description>` (documentation changes)
    - `chore: <description>` (tooling, dependencies, config updates)
 4. **Atomic Commits**: Ensure commits are small, logical, and focus on one specific change.
+5. **Pre-commit Checks**: **ALWAYS** run `pnpm build` and test the code before making any git commits. Commits must never break the build.
 
 ---
 
@@ -40,8 +41,9 @@
 ---
 
 ## ⚙️ Standard Commands
-* **Dev Server**: `npm run dev`
-* **Build App**: `npm run build`
-* **Run Tests (Playwright)**: `npx playwright test`
-* **Linting & Formatting**: `npm run lint` & `npm run format`
-* **Type Checking**: `npx tsc --noEmit`
+* **Package Manager**: `pnpm` (Use `pnpm add` instead of `npm install`)
+* **Dev Server**: `pnpm dev`
+* **Build App**: `pnpm build`
+* **Run Tests (Playwright)**: `pnpm dlx playwright test`
+* **Linting & Formatting**: `pnpm lint` & `pnpm format`
+* **Type Checking**: `pnpm tsc --noEmit`
