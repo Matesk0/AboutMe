@@ -3,11 +3,6 @@
 This document outlines the specific design, layout, and aesthetic rules implemented in the `web-about-me` static portfolio.
 
 ## Core Aesthetic & Technology
-* **Tech Stack**: React 19 + Vite 6 + TypeScript + Tailwind CSS v4 + Shadcn UI components.
-* **Color Palette**: 
-  * Background: GitHub dark mode-inspired grays (`#24292e`, `#2b3137`).
-  * Text: High contrast off-white (`#fafbfc`) and muted grays for secondary text (`#a1a1aa`, `text-neutral-400`).
-  * Accents: Vibrant green (`#2dba4e`) for primary actions and terminal accents, with subtle border colors (`#444d56`).
 * **General Vibe**: A premium developer feel that is highly readable but features striking micro-interactions, smooth animations, and terminal-like blocks.
 
 ## Layout Structure

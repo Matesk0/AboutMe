@@ -144,6 +144,48 @@
       "sourceType": "github",
       "skillPath": "skills/using-agent-skills/SKILL.md",
       "computedHash": "531902008625dafa3710a5a4730766455273ad6ea9beca0b4129be9f358de61f"
+    },
+    "autoskill": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "skills/autoskill/skill.md",
+      "computedHash": "eb9028e510e8de68d02ed2ead393354befca1f879545076cb21377cdc2898654"
+    },
+    "design-principles": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "skills/design-principles/skill.md",
+      "computedHash": "6f29ca9104641f25f1c47edd3b66e46314c0850ea4669f6e5a3fbf689a663cfa"
+    },
+    "question-me": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "skills/question-me/skill.md",
+      "computedHash": "404bef6b7bbf66ccdebdc848416253fc85e0a07ac3ab12c04c7e408a08030607"
+    },
+    "learn-together": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "skills/learn-together/skill.md",
+      "computedHash": "f150576011fccea88330eac9a952cf8c724aaaa9e7debb0530da71858d0b382f"
+    },
+    "agent-browser": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "skills/agent-browser/SKILL.md",
+      "computedHash": "16719180d2771f6430ff225199c1dea87b56fd7f708e5f8788d762467ecbbe74"
+    },
+    "react-best-practices": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "computedHash": "c5e7a8122c1c1cdd7fdc2361862776519d7c69a301b1909ae93a2cf4854f6891"
+    },
+    "frontend-design": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "skills/frontend-design/skill.md",
+      "computedHash": "d39adf3a983de7dafc75991590d54f091755f7e4163d5a5ed085ecd719157184"
     }
   }
 }
