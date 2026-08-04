@@ -1,12 +1,7 @@
-import { Providers } from '~/providers';
-import { AppRouter } from '~/routes';
+import Home from './screens/home';
 
 function App() {
-  return (
-    <Providers>
-      <AppRouter />
-    </Providers>
-  );
+  return <Home />;
 }
 
 export default App;

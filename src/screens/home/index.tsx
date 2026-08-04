@@ -1,12 +1,13 @@
 /* eslint-disable no-use-before-define */
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Terminal, Globe, Smartphone, Code2, Layout, Copy, Check, Mail } from 'lucide-react';
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('hello@example.com');
+    navigator.clipboard.writeText('matiaskojakub17@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -20,7 +21,7 @@ export default function Home() {
       {/* Minimal Header */}
       <nav className="fixed top-8 left-1/2 z-50 -translate-x-1/2">
         <div className="flex items-center gap-8 rounded-full border border-zinc-800 bg-black/50 px-8 py-3 backdrop-blur-md">
-          {['About', 'Projects', 'Skills', 'Experience', 'Contact'].map((item) => (
+          {['About', 'Projects', 'Skills', 'Education', 'Contact'].map((item) => (
             <button
               key={item}
               onClick={() => scrollTo(item.toLowerCase())}
@@ -37,11 +38,11 @@ export default function Home() {
         <section className="animate-in fade-in slide-in-from-bottom-4 duration-1000 space-y-10">
           <div>
             <h1 className="text-5xl font-medium tracking-tight text-zinc-100 sm:text-6xl">
-              John Doe
+              Jakub
             </h1>
-            <p className="mt-4 text-xl text-zinc-500">Software Engineer</p>
+            <p className="mt-4 text-xl text-zinc-500">University Student & Developer</p>
             <p className="mt-8 max-w-xl text-lg text-zinc-400 leading-relaxed font-light">
-              Crafting minimal, high-performance software. Focused on precision, detail, and seamless user experiences.
+              Studying Programming and Application Development at Masaryk University. Exploring how software works under the hood, building efficient systems, and solving algorithmic challenges.
             </p>
           </div>
           
@@ -65,16 +66,28 @@ export default function Home() {
               <div className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
               <div className="h-2.5 w-2.5 rounded-full bg-zinc-700" />
             </div>
-            <div className="p-6 font-mono text-sm leading-relaxed text-zinc-400">
-              <span className="text-zinc-500">➜</span> <span className="text-zinc-300">~</span> npx create-modern-react my-app<br />
-              <span className="text-zinc-600">Creating a new React app in my-app...</span><br />
-              <span className="text-zinc-600">Done! Build something beautiful.</span>
+            <div className="p-6 font-mono text-sm leading-relaxed text-zinc-400 space-y-4">
+              <div>
+                <span className="text-emerald-500">➜</span> <span className="text-blue-400">~</span> <span className="text-zinc-100">./about-me --whoami</span><br />
+                <span className="text-zinc-400">Hi, I'm Jakub! A university student studying Programming and App Development.</span>
+              </div>
+              <div>
+                <span className="text-emerald-500">➜</span> <span className="text-blue-400">~</span> <span className="text-zinc-100">./about-me --interests</span><br />
+                <span className="text-zinc-400">Programming, working out, reading, and gaming.</span>
+              </div>
+              <div>
+                <span className="text-emerald-500">➜</span> <span className="text-blue-400">~</span> <span className="text-zinc-100">./about-me --goal</span><br />
+                <span className="text-zinc-400">Exploring how software works under the hood and building efficient systems.</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-emerald-500">➜</span> <span className="text-blue-400">~</span> <span className="w-2 h-4 bg-zinc-400 animate-pulse"></span>
+              </div>
             </div>
           </div>
         </section>
 
         {/* About Me */}
-        <section id="about" className="scroll-mt-40 space-y-12">
+        <AnimatedSection id="about" className="scroll-mt-40 space-y-12">
           <h2 className="text-sm font-medium uppercase tracking-widest text-zinc-500">About</h2>
           <div className="grid gap-12 sm:grid-cols-[1fr_2fr]">
             <div className="group relative aspect-square overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950">
@@ -83,25 +96,30 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col justify-between space-y-8">
-              <p className="text-zinc-400 leading-relaxed font-light text-lg">
-                I approach software development with a focus on reduction. Removing the unnecessary so the essential may speak. My work spans from low-level systems to polished, user-facing interfaces.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <p className="text-zinc-400 leading-relaxed font-light text-lg italic">
+                  "Simplicity is the ultimate sophistication."
+                </p>
+                <p className="text-zinc-400 leading-relaxed font-light text-lg">
+                  I've been learning programming since high school. Beyond coding, my interests include working out, reading, and gaming. Currently, I'm deepening my knowledge in school.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-6 mt-4">
                 <div className="space-y-1">
-                  <p className="text-4xl font-light text-zinc-100">5+</p>
-                  <p className="text-xs uppercase tracking-widest text-zinc-600">Years Exp.</p>
+                  <p className="text-4xl font-light text-zinc-100">6+</p>
+                  <p className="text-xs uppercase tracking-widest text-zinc-600">Years Coding</p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-4xl font-light text-zinc-100">20+</p>
-                  <p className="text-xs uppercase tracking-widest text-zinc-600">Projects</p>
+                  <p className="text-4xl font-light text-zinc-100">C/Py</p>
+                  <p className="text-xs uppercase tracking-widest text-zinc-600">Core Stack</p>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* Projects */}
-        <section id="projects" className="scroll-mt-40 space-y-12">
+        <AnimatedSection id="projects" className="scroll-mt-40 space-y-12">
           <h2 className="text-sm font-medium uppercase tracking-widest text-zinc-500">Selected Works</h2>
           <div className="space-y-4">
             <ProjectCard 
@@ -117,80 +135,78 @@ export default function Home() {
               tags={['React Native', 'TypeScript']}
             />
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* Skills */}
-        <section id="skills" className="scroll-mt-40 space-y-12">
-          <h2 className="text-sm font-medium uppercase tracking-widest text-zinc-500">Expertise</h2>
+        <AnimatedSection id="skills" className="scroll-mt-40 space-y-12">
+          <h2 className="text-sm font-medium uppercase tracking-widest text-zinc-500">Expertise & Environment</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-8 transition-colors hover:bg-zinc-900/50">
               <div className="flex items-center gap-4 mb-8">
                 <Code2 className="h-5 w-5 text-zinc-500" />
-                <h3 className="font-medium text-zinc-100">Languages</h3>
+                <h3 className="font-medium text-zinc-100">Stack</h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                <Badge>TypeScript</Badge>
-                <Badge>JavaScript</Badge>
-                <Badge>HTML/CSS</Badge>
                 <Badge>Python</Badge>
+                <Badge>C</Badge>
+                <Badge>Expanding...</Badge>
               </div>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-8 transition-colors hover:bg-zinc-900/50">
               <div className="flex items-center gap-4 mb-8">
-                <Layout className="h-5 w-5 text-zinc-500" />
-                <h3 className="font-medium text-zinc-100">Frameworks</h3>
+                <Terminal className="h-5 w-5 text-zinc-500" />
+                <h3 className="font-medium text-zinc-100">Environment</h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                <Badge>React</Badge>
-                <Badge>Next.js</Badge>
-                <Badge>Tailwind</Badge>
-                <Badge>Node.js</Badge>
+                <Badge>Linux</Badge>
+                <Badge>Hyprland</Badge>
+                <Badge>Neovim</Badge>
               </div>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        {/* Experience */}
-        <section id="experience" className="scroll-mt-40 space-y-12">
-          <h2 className="text-sm font-medium uppercase tracking-widest text-zinc-500">Experience</h2>
+        {/* Education */}
+        <AnimatedSection id="education" className="scroll-mt-40 space-y-12">
+          <h2 className="text-sm font-medium uppercase tracking-widest text-zinc-500">Education</h2>
           <div className="space-y-12 border-l border-zinc-800 pl-8 ml-2">
             <ExperienceItem 
-              title="Senior Engineer"
-              company="Tech Corp"
-              date="2022 — Present"
-              description="Architected core systems and refined the user interface for enterprise clients."
-            />
-            <ExperienceItem 
-              title="Developer"
-              company="Startup Inc."
-              date="2020 — 2022"
-              description="Built end-to-end features with a strict focus on performance and minimal design."
+              title="Programming and Application Development"
+              company="Masaryk University"
+              date="Present"
+              description="Deepening knowledge in algorithms, system architecture, and software development fundamentals."
             />
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* Contact */}
-        <section id="contact" className="scroll-mt-40 pt-16 pb-32">
+        <AnimatedSection id="contact" className="scroll-mt-40 pt-16 pb-32">
           <div className="rounded-3xl border border-zinc-800 bg-zinc-950 p-12 text-center">
             <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-zinc-900 border border-zinc-800">
               <Mail className="h-5 w-5 text-zinc-400" />
             </div>
             <h2 className="text-2xl font-medium text-zinc-100">Let's connect.</h2>
             <p className="mt-4 mx-auto max-w-sm text-zinc-500 font-light">
-              Available for freelance opportunities and minimal design collaborations.
+              Always open to discussing programming, technology, or new opportunities.
             </p>
+            <div className="mt-8 flex justify-center gap-6 flex-wrap">
+              <a href="https://linkedin.com/in/jakub-matiaško-2057aa351" target="_blank" rel="noreferrer" className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors">LinkedIn</a>
+              <a href="https://instagram.com/matesko_76" target="_blank" rel="noreferrer" className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors">Instagram</a>
+              <a href="https://discord.com/users/722832160167428116" target="_blank" rel="noreferrer" className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors">Discord</a>
+              <a href="https://open.spotify.com/user/6fuib6t6gkkt12kvuadel7ewj" target="_blank" rel="noreferrer" className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors">Spotify</a>
+            </div>
             <div className="mt-10 flex justify-center">
               <button
                 onClick={copyEmail}
                 className="group flex items-center gap-3 rounded-full border border-zinc-800 bg-zinc-900 px-6 py-3 text-sm font-medium text-zinc-300 transition-all hover:bg-zinc-800"
               >
                 <Terminal className="h-4 w-4 text-zinc-500" />
-                <span className="font-mono">{copied ? 'Copied' : 'hello@example.com'}</span>
+                <span className="font-mono">{copied ? 'Copied' : 'matiaskojakub17@gmail.com'}</span>
                 {copied ? <Check className="h-4 w-4 text-zinc-400" /> : <Copy className="h-4 w-4 text-zinc-600 transition-colors group-hover:text-zinc-400" />}
               </button>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
       </main>
     </div>
   );
@@ -237,5 +253,20 @@ function Badge({ children }: { children: React.ReactNode }) {
     <span className="rounded-md border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-xs font-mono text-zinc-400">
       {children}
     </span>
+  );
+}
+
+function AnimatedSection({ id, className, children, delay = 0 }: { id?: string, className?: string, children: React.ReactNode, delay?: number }) {
+  return (
+    <motion.section 
+      id={id} 
+      className={className}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.7, delay, ease: "easeOut" }}
+    >
+      {children}
+    </motion.section>
   );
 }
