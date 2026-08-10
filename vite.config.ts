@@ -6,8 +6,8 @@ import compression from 'vite-plugin-compression';
 import path from 'path';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: '/AboutMe/',
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/AboutMe/' : '/',
   plugins: [
     react(),
     tailwindcss(),
