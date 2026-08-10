@@ -134,21 +134,8 @@ export default function Home() {
         {/* Projects */}
         <AnimatedSection id="projects" className="scroll-mt-40 space-y-12">
           <h2 className="text-sm font-medium uppercase tracking-widest text-zinc-500">Selected Works</h2>
-          <div className="grid gap-6 sm:grid-cols-2">
-            <ProjectCard 
-              title="Modern Website"
-              description="A minimal marketing website showcasing clean design and smooth animations."
-              tags={['React', 'Tailwind', 'Framer Motion']}
-              githubLink="https://github.com/matesk0"
-              liveLink="#"
-            />
-            <ProjectCard 
-              title="Finance App"
-              description="A cross-platform tracker emphasizing data clarity and intuitive user flow."
-              tags={['React Native', 'TypeScript']}
-              githubLink="https://github.com/matesk0"
-              liveLink="#"
-            />
+          <div className="flex justify-center rounded-2xl border border-zinc-800 border-dashed py-12">
+            <p className="text-zinc-500 font-light">Projects are currently being updated. Check back soon!</p>
           </div>
         </AnimatedSection>
 
