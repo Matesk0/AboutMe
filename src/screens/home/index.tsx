@@ -1,7 +1,7 @@
 /* eslint-disable no-use-before-define */
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Globe, Smartphone, Code2, Layout, Copy, Check, Mail, Send, ExternalLink, Github, FileText, Download } from 'lucide-react';
+import { Globe, Check, Mail, Send, Github, FileText, Download } from 'lucide-react';
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
@@ -266,42 +266,7 @@ export default function Home() {
   );
 }
 
-function ProjectCard({ title, description, tags, githubLink, liveLink }: { title: string, description: string, tags: string[], githubLink?: string, liveLink?: string }) {
-  return (
-    <div className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition-all hover:-translate-y-1 hover:border-zinc-700 hover:bg-zinc-900/50 hover:shadow-2xl hover:shadow-black/50">
-      <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 group-hover:text-zinc-100 transition-colors">
-            <Code2 className="h-5 w-5" />
-          </div>
-          <div className="flex gap-3 opacity-0 translate-y-2 transition-all group-hover:opacity-100 group-hover:translate-y-0">
-            {githubLink && (
-              <a href={githubLink} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-zinc-100 transition-colors">
-                <Github className="h-5 w-5" />
-              </a>
-            )}
-            {liveLink && (
-              <a href={liveLink} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-zinc-100 transition-colors">
-                <ExternalLink className="h-5 w-5" />
-              </a>
-            )}
-          </div>
-        </div>
-        <div>
-          <h3 className="text-lg font-medium text-zinc-100 group-hover:text-blue-400 transition-colors">{title}</h3>
-          <p className="mt-2 text-sm text-zinc-500 font-light leading-relaxed">{description}</p>
-        </div>
-      </div>
-      <div className="mt-6 flex flex-wrap gap-2">
-        {tags.map(tag => (
-          <span key={tag} className="rounded-md bg-zinc-900/80 px-2 py-1 text-xs font-mono text-zinc-400 border border-zinc-800/50">
-            {tag}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
+
 
 function SkillIcon({ name, url }: { name: string, url: string }) {
   return (

@@ -73,4 +73,4 @@ export default defineConfig(({ command }) => ({
     // Remove console.log and debugger in production
     drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : [],
   },
-});
+}));
